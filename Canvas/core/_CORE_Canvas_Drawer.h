@@ -9,6 +9,17 @@
 #include "_CORE_Canvas_Cursor.h"
 #include "_CORE_Canvas_Base.h"
 
+/*
+	For the functions marked as '_CANVAS_FORMAT_DRAWER_', 'format' is needed.
+	Take 'drawFormatGraphOnLayer' as an example.
+	drawFormatGraphOnLayer(_Canvas, _Layer, _Graph, _XPos, _YPos, '#',
+		"# #"
+		" # "
+		"# #"
+	);
+	This function will draw _Graph on the _Layer of _Canvas, but only draw the position where '#' exists in _Format.
+*/
+
 struct graph _CANVAS_FORMAT_DRAWER_ createGraphByModification(struct graph _Graph, p_chr _OriginChr, p_chr _TargetChr) {
 	struct graph _NewGraph;
 	_NewGraph.width = _Graph.width;

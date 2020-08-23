@@ -44,7 +44,7 @@ void _CANVAS_BASIS_ updateCanvas(struct canvas *_Canvas, c_size _LeftPos, c_size
 }
 struct canvas _CANVAS_BASIS_ *createCanvasByPureChr(c_size _CanvasWidth, c_size _CanvasHeight, p_chr _BackgroundChr) {
 	if(_CanvasWidth <= 0 || _CanvasHeight <= 0) return NULL;
-	HANDLE _HStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // TODO for multi-canvas
+	HANDLE _HStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleScreenBufferSize(_HStdOut, (COORD){_CanvasWidth, _CanvasHeight << 1});
 	SetConsoleWindowInfo(_HStdOut, TRUE, &(SMALL_RECT){0, 0, _CanvasWidth - 1, (_CanvasHeight << 1) - 1});
 	register int _IPos, _JPos;
